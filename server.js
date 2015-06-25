@@ -15,18 +15,24 @@ function setupRoutes() {
   app.use(multerAutoReap);
 
   app.post('/upload', function postUpload(req, res) {
-    console.log(req.files);
+    var pdfImage = new PDFImage(req.files['userPDF'].path);
 
-    res.redirect('/confirm');
+    pdfImage.convertPage(0).then(function onPageConversion(imagePath) {
+      fs.rename(imagePath, 'public/staging.png', function onImageRename(err) {
+        res.redirect('/confirm'); 
+      });
+    });
   });
 
   app.use(express.static(__dirname + '/public'));
 }
 
-var express         = require('express'),
+var fs              = require('fs'),
+    express         = require('express'),
     app             = express(),
     multer          = require('multer'),
     multerAutoReap  = require('multer-autoreap'),
+    PDFImage        = require("pdf-image").PDFImage,
     port            = process.env.PORT || 5000;
 
 setupRoutes();

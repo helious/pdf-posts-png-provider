@@ -11,7 +11,8 @@
   "dependencies": {
     "express": "~4.13.x",
     "multer": "~0.1.x",
-    "multer-autoreap": "0.0.9"
+    "multer-autoreap": "0.0.9",
+    "pdf-image": "0.0.1"
   },
   "engines": {
     "node": "0.12.2"
