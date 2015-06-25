@@ -1,0 +1,23 @@
+{
+  "name": "pdf-posts-png-provider",
+  "version": "0.0.0",
+  "description": "A simple web app that takes an uploaded PDF and converts it to an PNG to be served.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "helious",
+  "license": "ISC",
+  "dependencies": {
+    "express": "~4.13.x",
+    "multer": "~0.1.x",
+    "multer-autoreap": "0.0.9"
+  },
+  "engines": {
+    "node": "0.12.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heroku/node-js-getting-started"
+  }
+}
