@@ -30,7 +30,7 @@ var express         = require('express'),
     http            = require('http'),
     httpserv        = http.createServer(app),
     port            = process.env.PORT || 5000,
-    host            = '127.0.0.1';
+    host            = process.env.HOST || '127.0.0.1';
 
 httpserv.listen(port, host);
 
