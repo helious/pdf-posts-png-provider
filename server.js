@@ -29,10 +29,8 @@ var express         = require('express'),
     multerAutoReap  = require('multer-autoreap'),
     port            = process.env.PORT || 5000;
 
-app.set('port', port);
-
 setupRoutes();
 
-app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
+app.listen(port, function() {
+  console.log('Node app is running on port', port);
 });
