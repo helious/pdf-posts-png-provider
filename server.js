@@ -29,7 +29,7 @@ var express         = require('express'),
     multerAutoReap  = require('multer-autoreap'),
     http            = require('http'),
     httpserv        = http.createServer(app),
-    port            = 8006,
+    port            = process.env.PORT || 5000,
     host            = '127.0.0.1';
 
 httpserv.listen(port, host);
