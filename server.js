@@ -27,11 +27,12 @@ var express         = require('express'),
     app             = express(),
     multer          = require('multer'),
     multerAutoReap  = require('multer-autoreap'),
-    http            = require('http'),
-    httpserv        = http.createServer(app),
-    port            = process.env.PORT || 5000,
-    host            = process.env.HOST || '127.0.0.1';
+    port            = process.env.PORT || 5000;
 
-httpserv.listen(port, host);
+app.set('port', port);
 
 setupRoutes();
+
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
