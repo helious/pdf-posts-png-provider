@@ -1,11 +1,15 @@
 function startExpress() {
   app.use(function (req, res, next) {
     if (req.method === 'GET' && /^\/[\d\w]+(?=$|[\/?#])/.test(req.url)) {
-      req.url = req.url.replace(/^\/([\d\w]+).*$/, '/$1.html');
+      if (req.url.indexOf('/images') < 0 && req.url.indexOf('/fonts') < 0) {
+        req.url = req.url.replace(/^\/([\d\w]+).*$/, '/$1.html');
+      } else {
+        res.header("Access-Control-Allow-Origin", "*");
+      }
     }
 
     if (req.url === '/') {
-      req.url = '/index.html'
+      req.url = '/index.html';
     }
 
     next();
@@ -28,7 +32,7 @@ function startExpress() {
 
   app.use(express.static(__dirname + '/public'));
 
-  app.listen(port, function() {});
+  app.listen(port, function () {});
 }
 
 var fs              = require('fs'),
