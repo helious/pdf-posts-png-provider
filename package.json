@@ -9,6 +9,7 @@
   "author": "helious",
   "license": "ISC",
   "dependencies": {
+    "basic-auth": "^1.0.3",
     "express": "~4.13.x",
     "multer": "~0.1.x",
     "multer-autoreap": "0.0.9"
