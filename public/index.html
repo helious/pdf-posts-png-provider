@@ -1,11 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        padding: 30px 2.5%;
+        font-family: sans-serif;
+      }
+
+      h1 {
+        margin-bottom: 0.5em;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      input[type="submit"], input[type="file"] {
+        height: 29px;
+        line-height: 27px;
+        -moz-user-select: none;
+        background-color: #f5f5f5;
+        background-image: -moz-linear-gradient(center top , #f5f5f5, #f1f1f1);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 2px;
+        color: #444;
+        cursor: default;
+        font-family: arial,sans-serif;
+        font-size: 11px;
+        font-weight: bold;
+        margin: 11px 0;
+        min-width: 54px;
+        padding: 0 8px;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
-    <h1>Hello!</h1>
+    <h1>Upload A New Menu</h1>
     <form method="post" accept-charset="UTF-8" action="/upload" enctype="multipart/form-data">
-      <input type="file" name="userPDF" />
+      <label for="menu-pdf">Menu File Location (.PDF):</label><br>
+      <input id="menu-pdf" type="file" name="userPDF"><br>
       <input type="submit" value="Upload File" name="submit">
     </form>
   </body>

@@ -1,11 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        padding: 30px 2.5%;
+        font-family: sans-serif;
+        margin: 0;
+        text-align: center;
+        background: black;
+        color: white;
+      }
+
+      input[type="submit"], input[type="file"], a {
+        height: 29px;
+        line-height: 27px;
+        -moz-user-select: none;
+        background-color: #f5f5f5;
+        background-image: -moz-linear-gradient(center top , #f5f5f5, #f1f1f1);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 2px;
+        color: #444;
+        cursor: default;
+        font-family: arial,sans-serif;
+        font-size: 11px;
+        font-weight: bold;
+        margin: 11px 8px;
+        min-width: 54px;
+        padding: 0 8px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      img {
+        background: white;
+        width: 65%;
+        padding: 30px 2.5%;
+        margin: 0 auto;
+      }
+    </style>
   </head>
   <body>
-    <h1>Hello!</h1>
-    Is this what you wanted?
     <img src="/staging.png" />
+    <p>
+      Does This Look Good?
+    </p>
     <form method="post" accept-charset="UTF-8" action="/deploy">
       <input type="submit" value="Yes" name="submit">
     </form>
